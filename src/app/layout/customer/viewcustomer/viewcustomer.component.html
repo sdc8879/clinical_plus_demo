@@ -1,0 +1,150 @@
+<div class="d-flex flex-wrap bg-light">
+  <table class="table table-striped table-bordered ">
+    <thead>
+      <div><span style="margin:14px"><b>Customer Info</b></span></div>
+      <br>
+    </thead>
+    <tbody *ngFor="let obj1 of customerInfo">
+      <!-- <tbody> -->
+      <td>
+        <tr>
+          <th>Id</th>
+          <td>{{obj1.Id}}</td>
+        </tr>
+        <tr>
+          <th>Company Name</th>
+          <td>{{obj1.CompanyName}}</td>
+        </tr>
+        <tr>
+          <th>Contact Name</th>
+          <td>{{obj1.ContactName}}</td>
+        </tr>
+        <tr>
+          <th>Contact Title</th>
+          <td>{{obj1.ContactTitle}}</td>
+        </tr>
+        <tr>
+          <th>Address</th>
+          <td>{{obj1.Address}}</td>
+        </tr>
+        <tr>
+          <th>City</th>
+          <td>{{obj1.City}}</td>
+        </tr>
+        <tr>
+          <th>Postal Code</th>
+          <td>{{obj1.PostalCode}}</td>
+        </tr>
+        <tr>
+          <th>Country</th>
+          <td>{{obj1.Country}}</td>
+        </tr>
+        <tr>
+          <th>Phone</th>
+          <td>{{obj1.Phone}}</td>
+        </tr>
+        <tr>
+          <th>Fax</th>
+          <td>{{obj1.Fax}}</td>
+        </tr>
+      </td>
+    </tbody>
+  </table>
+
+</div>
+
+<br>
+
+<div class="d-flex flex-wrap bg-light" *ngIf="custDetail.length>0">
+
+  <div style="overflow-x:auto;">
+    <table class="table table-striped table-bordered ">
+      <thead>
+        <div> <span style="margin:14px"> <b>Customer Orders</b></span></div>
+        <br>
+        <tr>
+          <th id="h-0-0"><b></b>Order</th>
+          <th id="h-0-1"><b></b>Order Details</th>
+        </tr>
+      </thead>
+      <tbody *ngFor="let obj of custDetail">
+        <td>
+          <tr>
+            <th>Id</th>
+            <td>{{obj.Order.Id}}</td>
+          </tr>
+          <tr>
+            <th>Customer Id</th>
+            <td>{{obj.Order.CustomerId}}</td>
+          </tr>
+          <tr>
+            <th>Employee Id</th>
+            <td>{{obj.Order.EmployeeId}}</td>
+          </tr>
+          <tr>
+            <th>Order Date</th>
+            <td>{{obj.Order.OrderDate}}</td>
+          </tr>
+          <tr>
+            <th>Required Date</th>
+            <td>{{obj.Order.RequiredDate}}</td>
+          </tr>
+          <tr>
+            <th>Shipped Date</th>
+            <td>{{obj.Order.ShippedDate}}</td>
+          </tr>
+          <tr>
+            <th>Ship Via</th>
+            <td>{{obj.Order.ShipVia}}</td>
+          </tr>
+          <tr>
+            <th>Freight</th>
+            <td>{{obj.Order.Freight}}</td>
+          </tr>
+          <tr>
+            <th>Ship Name</th>
+            <td>{{obj.Order.ShipName}}</td>
+          </tr>
+          <tr>
+            <th>Ship Address</th>
+            <td>{{obj.Order.ShipAddress}}</td>
+          </tr>
+          <tr>
+            <th>Ship City</th>
+            <td>{{obj.Order.ShipCity}}</td>
+          </tr>
+          <tr>
+            <th>Ship Postal Code</th>
+            <td>{{obj.Order.ShipPostalCode}}</td>
+          </tr>
+          <tr>
+            <th>Country</th>
+            <td>{{obj.Order.Country}}</td>
+          </tr>
+        </td>
+        <td>
+          <table id="tbl-1" class="table table-striped table-bordered">
+            <thead>
+              <tr>
+                <th id="h-1-0"><b></b>Order Id</th>
+                <th id="h-1-1"><b></b>Product Id</th>
+                <th id="h-1-2"><b></b>Unit Price</th>
+                <th id="h-1-3"><b></b>Quantity</th>
+                <th id="h-1-4"><b></b>Discount</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let ref of obj.OrderDetails">
+                <td>{{ref.OrderId}}</td>
+                <td>{{ref.ProductId}}</td>
+                <td>{{ref.UnitPrice}}</td>
+                <td>{{ref.Quantity}}</td>
+                <td>{{ref.Discount}}</td>
+              </tr>
+            </tbody>
+          </table>
+        </td>
+      </tbody>
+    </table>
+  </div>
+</div>

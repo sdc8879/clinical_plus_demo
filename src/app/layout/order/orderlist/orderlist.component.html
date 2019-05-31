@@ -1,0 +1,94 @@
+<!-- <a class="list-group-item" [routerLink]="['../add']">
+  <i class="fa fa-fw fa-dashboard"></i>&nbsp;
+  <span>Customer</span>
+</a> -->
+<div class="d-flex flex-wrap bg-light">
+    <h1>Order List</h1>
+  </div>
+<div class="d-flex flex-wrap bg-light">
+  <form class="form-inline">
+    <label for="text" class="mr-sm-2">Search:</label>
+    <input type="text" class="form-control mb-2 mr-sm-2" id="text" name="filter" [(ngModel)]="filter">
+  </form>
+</div>
+
+<div style="overflow-x:auto;">
+  <table class="table table-striped table-bordered ">
+    <thead>
+      <tr>
+        <th scope="col">Id</th>
+        <th scope="col">Customer Id</th>
+        <th scope="col">Employee Id</th>
+        <th scope="col">Order Date</th>
+        <th scope="col">Required Date</th>
+        <th scope="col">Shipped Date</th>
+        <th scope="col">Ship Via</th>
+        <th scope="col">Freight</th>
+        <th scope="col">Ship Name</th>
+        <th scope="col">Ship Address</th>
+        <th scope="col">Ship City</th>
+        <th scope="col">Ship PostalCode</th>
+        <th scope="col">Ship Country</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let ref of orderList | filter:filter | paginate: { itemsPerPage: 5, currentPage: p }; index as i">
+
+        <td >
+          {{ref.Id}}
+        </td>
+
+        <td>
+          {{ref.CustomerId}}
+        </td>
+
+        <td>
+          {{ref.EmployeeId}}
+        </td>
+
+        <td>
+          {{ref.OrderDate}}
+        </td>
+
+        <td>
+          {{ref.RequiredDate}}
+        </td>
+
+        <td>
+          {{ref.ShippedDate}}
+        </td>
+
+        <td>
+          {{ref.ShipVia}}
+        </td>
+
+        <td>
+          {{ref.Freight}}
+        </td>
+
+        <td>
+          {{ref.ShipName}}
+        </td>
+
+        <td>
+          {{ref.ShipAddress}}
+        </td>
+
+        <td>
+          {{ref.ShipCity}}
+        </td>
+
+        <td>
+          {{ref.ShipPostalCode}}
+        </td>
+
+
+        <td>
+          {{ref.ShipCountry}}
+        </td>
+
+      </tr>
+    </tbody>
+  </table>
+  <pagination-controls style="width:1000%" (pageChange)="p = $event"></pagination-controls>
+</div>
