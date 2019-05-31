@@ -28,5 +28,7 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 
 
 1) npm i --save
+-------------------------------------
 2)go to localhost:4200/
+-------------------------------------
 3)click on login button it will redirect to layout
